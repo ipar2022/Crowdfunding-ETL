@@ -63,25 +63,3 @@ SELECT * FROM contacts;
 SELECT * FROM category;
 SELECT * FROM subcategory;
 SELECT * FROM campaign;
-
-CREATE TABLE "backers" (
-    "backers_id"  varchar(10)   NOT NULL,
-	 "cf_id" int NOT NULL,
-    "first_name" varchar(50)   NOT NULL,
-    "last_name" varchar(50)   NOT NULL,
-    "email" varchar(100)   NOT NULL
---    CONSTRAINT "fk_backers" FOREIGN KEY ("cf_id")
-);
-SELECT * FROM backers
-
-CREATE TABLE "backers" (
-    "backers_id"  varchar(10)   NOT NULL,
-	 "cf_id" int NOT NULL,
-    "first_name" varchar(50)   NOT NULL,
-    "last_name" varchar(50)   NOT NULL,
-    "email" varchar(100)   NOT NULL
-);
-
-ALTER TABLE "campaign" ADD CONSTRAINT "fk_campaign_subcategory_id" FOREIGN KEY("subcategory_id")
-REFERENCES "subcategory" ("subcategory_id");
-SELECT * FROM backers
